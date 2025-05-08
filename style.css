@@ -1,0 +1,5 @@
+
+body { font-family: Arial, sans-serif; background: linear-gradient(135deg, #007bff, #ffffff); margin: 0; }
+.header { background: #007bff; padding: 15px; color: white; text-align: center; }
+.main { padding: 20px; max-width: 600px; margin: auto; background: white; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+footer { text-align: center; padding: 10px; font-size: 12px; background: #333; color: white; }
