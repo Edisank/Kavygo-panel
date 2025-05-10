@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Panel de KavyGo</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Panel de KavyGo</h1>
+        <nav>
+            <a href="#" onclick="showSection('recargas')">Recargas y Créditos</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="recargas" class="section active">
+            <h2>Recargas y Créditos</h2>
+            <button class="btn" onclick="addRecarga()">Agregar Recarga a Conductor</button>
+            <button class="btn" onclick="addCredito()">Agregar Crédito a Pasajero</button>
+
+            <h3>Filtrar por Fecha y Nombre</h3>
+            <input type="date" id="startDate"> a
+            <input type="date" id="endDate">
+            <input type="text" id="nameFilter" placeholder="Buscar por nombre">
+            <button class="btn" onclick="filterByDateAndName()">Filtrar</button>
+
+            <h3>Recargas Activas</h3>
+            <ul id="recargasList"></ul>
+
+            <h3>Créditos Activos</h3>
+            <ul id="creditosList"></ul>
+        </section>
+
+        <footer>
+            <p>Contacto: Edward Santiago | Cel: +57 3213118124 | Correo: tjedisan@gmail.com</p>
+        </footer>
+    </main>
+</body>
+</html>
