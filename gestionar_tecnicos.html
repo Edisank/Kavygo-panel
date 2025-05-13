@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestionar Técnicos - KavyGo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestionar Técnicos</h1>
+        <form id="add-technician-form">
+            <input type="text" id="tech-name" placeholder="Nombre del Técnico" required>
+            <input type="email" id="tech-email" placeholder="Correo del Técnico" required>
+            <button type="button" onclick="addTechnician()">Agregar Técnico</button>
+        </form>
+        <h2>Lista de Técnicos</h2>
+        <table id="tech-list">
+            <thead>
+                <tr><th>Nombre</th><th>Correo</th><th>Acciones</th></tr>
+            </thead>
+            <tbody id="tech-list-body"></tbody>
+        </table>
+        <footer>
+            <p>Contacto: Edward Santiago | Cel: +57 3213118124 | Correo: tjedisan@gmail.com</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
