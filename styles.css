@@ -1,0 +1,54 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const tablaTecnicos = document.getElementById('tabla-tecnicos').getElementsByTagName('tbody')[0];
+    const formAddTecnico = document.getElementById('form-add-tecnico');
+    const modalEditarTecnico = document.getElementById('editar-tecnico-modal');
+    const formEditarTecnico = document.getElementById('form-editar-tecnico');
+    const closeButtonModal = modalEditarTecnico.querySelector('.close-button');
+    const editIdInput = document.getElementById('edit-tecnico-id');
+    const editNombreInput = document.getElementById('edit-nombre-tecnico');
+    const editCorreoInput = document.getElementById('edit-correo-tecnico');
+
+    // Datos de técnicos simulados (esto en un sistema real vendría de una API)
+    let tecnicos = [
+        { id: 1, nombre: 'Juan Pérez', correo: 'juan.perez@kavygo.com' },
+        { id: 2, nombre: 'María Gómez', correo: 'maria.gomez@kavygo.com' }
+    ];
+
+    function renderizarTabla() {
+        tablaTecnicos.innerHTML = '';
+        tecnicos.forEach(tecnico => {
+            const row = tablaTecnicos.insertRow();
+            const idCell = row.insertCell();
+            const nombreCell = row.insertCell();
+            const correoCell = row.insertCell();
+            const accionesCell = row.insertCell();
+
+            idCell.textContent = tecnico.id;
+            nombreCell.textContent = tecnico.nombre;
+            correoCell.textContent = tecnico.correo;
+
+            const editarBtn = document.createElement('button');
+            editarBtn.textContent = 'Editar';
+            editarBtn.classList.add('editar-btn');
+            editarBtn.dataset.id = tecnico.id;
+            editarBtn.addEventListener('click', () => mostrarModalEditar(tecnico.id));
+
+            const eliminarBtn = document.createElement('button');
+            eliminarBtn.textContent = 'Eliminar';
+            eliminarBtn.classList.add('eliminar-btn');
+            eliminarBtn.dataset.id = tecnico.id;
+            eliminarBtn.addEventListener('click', () => eliminarTecnico(tecnico.id));
+
+            accionesCell.appendChild(editarBtn);
+            accionesCell.appendChild(eliminarBtn);
+        });
+    }
+
+    function mostrarModalEditar(id) {
+        const tecnico = tecnicos.find(t => t.id === id);
+        if (tecnico) {
+            editIdInput.value = tecnico.id;
+            editNombreInput.value = tecnico.nombre;
+            editCorreoInput.value = tecnico.correo;
+            modalEditarTecnico.style.display = "block";
+        }
