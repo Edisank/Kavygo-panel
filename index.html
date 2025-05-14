@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de KavyGo</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="navbar">
+        <button onclick="goBack()">⬅️ Volver</button>
+        <button onclick="goHome()">🏠 Inicio</button>
+    </div>
+
+    <h1>Panel de KavyGo</h1>
+
+    <div class="menu">
+        <a href="gestionar_tecnicos.html">Gestionar Técnicos</a>
+        <a href="estadisticas.html">Ver Estadísticas</a>
+        <a href="configuracion.html">Configuración del Sistema</a>
+        <a href="menu_kavygo.html">Menú KavyGo</a>
+    </div>
+
+    <footer>
+        <p>Contacto: Edward Santiago | Cel: +57 3213118124 | Correo: tjedisan@gmail.com</p>
+    </footer>
+
+<script>
+function goBack() { window.history.back(); }
+function goHome() { window.location.href = 'index.html'; }
+</script>
+</body>
+</html>
